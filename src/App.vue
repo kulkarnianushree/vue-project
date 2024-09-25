@@ -8,7 +8,7 @@
         </ul>
      </section>   
      <section>
-        <user-data @form-submit="submitHandler"></user-data>
+        <user-data ></user-data>
      </section>                                                                                                                                                                       
 </template>
 
@@ -21,13 +21,13 @@ export default {
     },
     provide:function () {
       return{
-        userList:this.userList
+        userList:this.userList,
+        formSubmit:this.submitHandler
       }
     },
     methods:{
         submitHandler(user){
             this.userList.push(user)
-            console.log(this.userList)
         }
     }
 }

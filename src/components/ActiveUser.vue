@@ -12,6 +12,7 @@
 export default {
     inject:['userList']
 }
+
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
     <section>
-        <form @submit.prevent="formSubmit">
+        <form @submit.prevent="formSubmit(userData)">
             <input
                 type="name"
                 placeholder="Enter Your Name"
@@ -17,15 +17,16 @@
 </template>
 <script>
 export default {
-    emits:{
-        "form-submit":function(userData){
-            if(userData){
-                return true
-            }else{
-                return false
-            }
-        }
-    },
+    // emits:{
+    //     "form-submit":function(userData){
+    //         if(userData){
+    //             return true
+    //         }else{
+    //             return false
+    //         }
+    //     }
+    // },
+    inject:['formSubmit'],
     data:function(){
         return{
             userData:{
@@ -34,16 +35,6 @@ export default {
             }
         }
     },
-    methods:{
-        formSubmit(){
-            this.$emit('form-submit',{
-                ...this.userData,
-                id:Math.random().toString()
-            })
-            this.userData.name = '',
-            this.userData.age=''
-        }
-    }
 }
 </script>
 
