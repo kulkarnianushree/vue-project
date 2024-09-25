@@ -38,6 +38,6 @@ h2 {
 h3 {
   margin: 0;
   font-size: 14px;
-  color: #666;
+  color: orange;
 }
 </style>
