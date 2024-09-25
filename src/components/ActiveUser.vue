@@ -1,23 +1,16 @@
 <template>
     <section>
-        <li :key="id">
-            <h2>{{ name }}</h2>
-            <h3>{{ age }}</h3>
+        <li 
+            v-for='user in userList'
+            :key="user.id">
+            <h2>{{ user.name }}</h2>
+            <h3>{{ user.age }}</h3>
         </li>
     </section>
 </template>
 <script>
 export default {
-    props:{
-        name:{
-            type:String,
-            required:true
-        },
-        age:{
-            type:Number,
-            required:true
-        }
-    }
+    inject:['userList']
 }
 </script>
 

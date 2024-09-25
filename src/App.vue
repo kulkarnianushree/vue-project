@@ -4,13 +4,7 @@
      </header>  
      <section>
         <ul>
-            <active-user 
-                v-for="user in userList"
-                :key="user.id"
-                :id="user.id"
-                :name="user.name"
-                :age="user.age"
-            ></active-user>
+            <active-user></active-user>
         </ul>
      </section>   
      <section>
@@ -24,6 +18,11 @@ export default {
         return{
             userList:[]
         }
+    },
+    provide:function () {
+      return{
+        userList:this.userList
+      }
     },
     methods:{
         submitHandler(user){
